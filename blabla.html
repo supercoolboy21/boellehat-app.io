@@ -1,0 +1,71 @@
+<html lang="da">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Bøllehat Designer</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      text-align: center;
+      padding: 20px;
+      background-color: #f0f0f0;
+    }
+    h1 {
+      color: #333;
+    }
+    select, button {
+      padding: 10px;
+      margin: 10px;
+      font-size: 16px;
+    }
+    #hat-preview {
+      margin-top: 20px;
+    }
+    .hat-image {
+      width: 300px;
+      height: 300px;
+      object-fit: contain;
+      border: 2px solid #ccc;
+      background-color: white;
+    }
+  </style>
+</head>
+<body>
+  <h1>Design din egen Bøllehat</h1>
+  <label for="color">Vælg farve:</label>
+  <select id="color">
+    <option value="red">Rød</option>
+    <option value="blue">Blå</option>
+    <option value="green">Grøn</option>
+    <option value="yellow">Gul</option>
+    <option value="black">Sort</option>
+  </select>
+
+  <label for="motif">Vælg motiv:</label>
+  <select id="motif">
+    <option value="rose">Rose (Danmark)</option>
+    <option value="lotus">Lotus (Indien)</option>
+    <option value="maple">Lønneløv (Canada)</option>
+    <option value="yoga">Yoga figur</option>
+    <option value="run">Løber</option>
+  </select>
+
+  <button onclick="updateHat()">Vis Bøllehat</button>
+
+  <div id="hat-preview">
+    <h2>Forhåndsvisning:</h2>
+    <img id="hatImage" class="hat-image" src="" alt="Din bøllehat vises her" />
+  </div>
+
+  <script>
+    function updateHat() {
+      const color = document.getElementById("color").value;
+      const motif = document.getElementById("motif").value;
+
+      // Her simulerer vi billednavnet baseret på farve og motiv
+      const imagePath = `https://example.com/hats/${color}-${motif}.png`;
+      document.getElementById("hatImage").src = imagePath;
+    }
+  </script>
+</body>
+</html>
